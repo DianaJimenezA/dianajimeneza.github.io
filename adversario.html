@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    function Iniciar(){
+        var url = window.location.search.substring(1);
+        console.log('recibio:'+url);
+        var parametros=url.split("&");
+        if(parametros!=null){
+            var turno= parametros[0].split("=")[1];
+            var estado =parametros[1].split("=")[1];
+            console.log('Turno:'+turno);
+            console.log('Estado:'+estado);
+
+
+            fila=1;
+            columna=2;
+            document.body.innerHTML =fila+""+columna;
+        }
+    }
+    function MinMax(){
+        
+    }
+    Iniciar();
+</script>
