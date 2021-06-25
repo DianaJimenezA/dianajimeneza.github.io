@@ -8,17 +8,49 @@
     function Iniciar(){
         var url = window.location.search.substring(1);
         console.log('recibio:'+url);
-        var parametros=url.split("&");
-        if(parametros!=null){
-            var turno= parametros[0].split("=")[1];
-            var estado =parametros[1].split("=")[1];
-            console.log('Turno:'+turno);
-            console.log('Estado:'+estado);
+        if(url!=undefined){
+            var parametros=url.split("&");
+            if(parametros!=""){
+                var turno= parametros[0].split("=")[1];
+                var estado =parametros[1].split("=")[1];
+                console.log('Turno:'+turno);
+                console.log('Estado:'+estado);
+                var tablero=[[],[],[],[],[],[],[],[]];
+            
+                for(var i=0; i<estado.length; i++){
+                    if(i<=7){
+                        tablero[0].push(estado[i]);
+                    } 
+                    else if(i<=15){
+                        tablero[1].push(estado[i]);
+                    }
+                    else if(i<=23){
+                        tablero[2].push(estado[i]);
+                    }
+                    else if(i<=31){
+                        tablero[3].push(estado[i]);
+                    }
+                    else if(i<=39){
+                        tablero[4].push(estado[i]);
+                    }
+                    else if(i<=47){
+                        tablero[5].push(estado[i]);
+                    }
+                    else if(i<=55){
+                        tablero[6].push(estado[i]);
+                    }
+                    else if(i<=63){
+                        tablero[7].push(estado[i]);
+                    } 
+                }
+                console.log(tablero);
+                
+            
 
-
-            fila=1;
-            columna=2;
-            document.body.innerHTML =fila+""+columna;
+                fila=3;
+                columna=2;
+                document.body.innerHTML =fila+""+columna;
+            }
         }
     }
     function MinMax(){
