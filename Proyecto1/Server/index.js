@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 app.get('/rev', function (req, res) {
    var text='<html>'+'<head></head><body>'+54
